@@ -16,6 +16,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
 import com.bruce.pickerview.LoopScrollListener;
@@ -304,6 +305,31 @@ public class DatePickerPopWin extends PopupWindow implements OnClickListener {
     }
 
     /**
+     * Show date picker in a view
+     *
+     * @param activity
+     * * @param view
+     */
+
+    public void showPopWinInView(Activity activity, FrameLayout view) {
+
+        if (null != activity) {
+            view.addView(pickerContainerV, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//            TranslateAnimation trans = new TranslateAnimation(
+//                    Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF,
+//                    0, Animation.RELATIVE_TO_SELF, 1,
+//                    Animation.RELATIVE_TO_SELF, 0);
+//
+//            showAtLocation(activity.getWindow().getDecorView(), Gravity.BOTTOM,
+//                    0, 0);
+//            trans.setDuration(400);
+//            trans.setInterpolator(new AccelerateDecelerateInterpolator());
+//
+//            pickerContainerV.startAnimation(trans);
+        }
+    }
+
+    /**
      * Show date picker popWindow
      *
      * @param activity
@@ -311,7 +337,6 @@ public class DatePickerPopWin extends PopupWindow implements OnClickListener {
     public void showPopWin(Activity activity) {
 
         if (null != activity) {
-
             TranslateAnimation trans = new TranslateAnimation(
                     Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF,
                     0, Animation.RELATIVE_TO_SELF, 1,
